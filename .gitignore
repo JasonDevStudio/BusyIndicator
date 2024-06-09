@@ -398,3 +398,4 @@ FodyWeavers.xsd
 *.sln.iml
 /YExplorer/.idea/.idea.YExplorer/.idea/indexLayout.xml
 /XExplorer/.idea
+**/.idea
