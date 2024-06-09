@@ -76,7 +76,7 @@
 
     <busyIndicator:BusyMask
         x:Name="BusyIndicator"
-        Style="{StaticResource BusyMaskCustomStyle}"
+        Style="{StaticResource CustomBusyMaskStyle}"
         BusyContent="Please wait..."
         BusyContentMargin="10"
         FocusAfterBusy="{Binding ElementName=MyTextBox}"

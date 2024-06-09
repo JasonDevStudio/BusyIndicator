@@ -3,6 +3,7 @@ using System.Windows;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
 using System.ComponentModel;
+using System.Threading;
 
 namespace Demo
 {
@@ -61,9 +62,9 @@ namespace Demo
                 duration = 15;
             }
 
-            civm.IsBusy = true;
+            civm.Show(new CancellationTokenSource(), true, true);
             await Task.Delay(System.TimeSpan.FromSeconds(duration));
-            civm.IsBusy = false;
+            civm.Stop();
         }
     }
 }

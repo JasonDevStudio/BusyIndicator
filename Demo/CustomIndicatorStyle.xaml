@@ -26,7 +26,7 @@
                                 <Border BorderThickness="1" Padding="5" Background="White" BorderBrush="#A9A9A9">
                                     <VirtualizingStackPanel>
                                         <ProgressBar Value="50" IsIndeterminate="True" Width="200" Height="25" />
-                                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Visibility="{Binding ShowStep}">
                                             <TextBlock Text="当前执行步骤:"></TextBlock>
                                             <TextBlock Text="{Binding CurrentStep}"></TextBlock>
                                         </StackPanel>
@@ -34,7 +34,7 @@
                                             <TextBlock Text="耗时:"></TextBlock>
                                             <TextBlock Text="{Binding Times}"></TextBlock>
                                         </StackPanel>
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Visibility="{Binding CanAbort}">
                                             <Button IsEnabled="True" Content="终止" Style="{StaticResource ButtonPrimary}" Command="{Binding AbortCommand}"/>
                                         </StackPanel>
                                     </VirtualizingStackPanel>
