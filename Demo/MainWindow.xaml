@@ -7,8 +7,8 @@
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Demo"
-    Width="350"
-    Height="500"
+    Width="1300"
+    Height="800"
     MouseLeftButtonDown="Window_MouseLeftButtonDown"
     mc:Ignorable="d"
     x:Name="DemoWindow"
@@ -75,8 +75,8 @@
     </Window.Resources>
 
     <busyIndicator:BusyMask
-        DataContext="{Binding ElementName=DemoWindow}"
         x:Name="BusyIndicator"
+        Style="{StaticResource BusyMaskCustomStyle}"
         BusyContent="Please wait..."
         BusyContentMargin="10"
         FocusAfterBusy="{Binding ElementName=MyTextBox}"

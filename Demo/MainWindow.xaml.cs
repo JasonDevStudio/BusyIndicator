@@ -8,11 +8,14 @@ namespace Demo
 {
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        private CustomIndicator civm; 
         private bool isBusy;
         public event PropertyChangedEventHandler PropertyChanged;
         public MainWindow()
         {
             InitializeComponent();
+            civm = new CustomIndicator();
+            this.BusyIndicator.DataContext = civm; 
             IndicatorComboBox.SelectedIndex = 0;
             
             if(BusyIndicator.IsBusyAtStartup)
@@ -55,12 +58,12 @@ namespace Demo
         {
             if (!double.TryParse(MyTextBox.Text, out double duration))
             {
-                duration = 5;
+                duration = 15;
             }
 
-            IsBusy = true;
+            civm.IsBusy = true;
             await Task.Delay(System.TimeSpan.FromSeconds(duration));
-            IsBusy = false;
+            civm.IsBusy = false;
         }
     }
 }
